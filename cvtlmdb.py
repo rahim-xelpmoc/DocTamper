@@ -1,10 +1,8 @@
 # convert the .mdb data to images, output in (args.input)_new dir.
 import os
 import cv2
-import six
 import lmdb
 import argparse
-from PIL import Image
 import numpy as np
 from tqdm import tqdm
 parser = argparse.ArgumentParser()

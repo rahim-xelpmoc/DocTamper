@@ -1,0 +1,35 @@
+# Byte-compiled files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Environment files
+.env
+.venv/
+*.env
+*.venv
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environment
+venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDE-specific files
+.idea/
+.vscode/
+
+# Logs
+*.log
+*.pth
+# Distribution files
+dist/
+build/
+*.egg-info/
+
+# OS-specific files
+.DS_Store
+Thumbs.db

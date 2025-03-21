@@ -1,37 +1,21 @@
-import os
 import cv2
 import lmdb
 import torch
 import jpegio
 import numpy as np
-import torch.nn as nn
-import gc
-import math
-import time
-import copy
 import logging
-import torch.optim as optim
-import torch.distributed as dist
 import pickle
 import six
-from glob import glob
 from PIL import Image
 from tqdm import tqdm
 from torch.autograd import Variable
-from torch.cuda.amp import autocast
-import segmentation_models_pytorch as smp
-from torch.utils.data import Dataset, DataLoader
-from torch.cuda.amp import autocast, GradScaler#need pytorch>1.6
-from losses import DiceLoss,FocalLoss,SoftCrossEntropyLoss,LovaszLoss
-import albumentations as A
+from torch.utils.data import Dataset, DataLoader #need pytorch>1.6
+from losses import SoftCrossEntropyLoss,LovaszLoss
 from dtd import *
 from albumentations.pytorch import ToTensorV2
 import torchvision
 import argparse
 import tempfile
-from functools import partial
-import torch.nn.functional as F
-from timm.models.layers import trunc_normal_, DropPath
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--data_root', type=str, default='./') # root to the dir of lmdb files
